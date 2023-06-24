@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Creator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.2.0/dist/cdn.min.js" defer></script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4">
+        <h1 class="text-white text-4xl font-bold">Chatbot Creator</h1>
+    </header>
+    <main class="container mx-auto mt-10">
+        <section class="text-center">
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-2xl font-bold mb-4">Create a chatbot with OpenAI</h2>
+                <textarea id="userPrompt" class="w-full h-24 p-2 mb-4 border border-gray-300 rounded" placeholder="Enter your user prompt here..."></textarea>
+                <button id="submitBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    Submit
+                </button>
+            </div>
+        </section>
+        <section class="mt-10">
+            <h2 class="text-3xl font-bold mb-4">Pre-designed Chatbot Templates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div @click="applyTemplate(1)" x-data="{ applyTemplate: (id) => { document.getElementById('userPrompt').value = 'Template ' + id; }}" class="bg-white p-4 rounded shadow cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2">Template 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+                <div @click="applyTemplate(2)" x-data="{ applyTemplate: (id) => { document.getElementById('userPrompt').value = 'Template ' + id; }}" class="bg-white p-4 rounded shadow cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2">Template 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+                <div @click="applyTemplate(3)" x-data="{ applyTemplate: (id) => { document.getElementById('userPrompt').value = 'Template ' + id; }}" class="bg-white p-4 rounded shadow cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2">Template 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-4 mt-10">
+        <p class="text-white text-center">&copy; 2022 Chatbot Creator. All rights reserved.</p>
+    </footer>
+</body>
+</html>
